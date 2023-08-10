@@ -42,6 +42,39 @@ vectordb = Chroma.from_documents(documents=texts, embedding=embedding, persist_d
 
 ## References
 
+### Langchain 
+
+- Core components: 
+
+  - Prompt templates: style template, QA
+  - LLMs: GPT-3.5, BLOOM
+  - Agents: web search
+  - Memory: short-term, long-term
+
+![def]
+- Langchain applications
+  - Models (LLM Wrappers)
+  - Prompts
+  - Chains
+  - Embeddings and Vector Stores
+  - Agents
+
+- A prompt in LLMs
+
+![promt-structure](https://cdn.sanity.io/images/vr8gru94/production/6c9703965f770d56b19d5d0adc7ad76ac2d28412-3720x1552.png)
+
+- `Instructions` tell me what to do and how to use context.
+- `Context` provides additional knowledge.
+- `User` query is typically input by a human user.
+- `Output` indicator marks the start of generated text.
+
+### Few Shot Prompt Templates
+
+- **Parametric knowledge** — learned by the model during training time and is stored within the model weights (or parameters).
+
+- **Source knowledge**— any knowledge provided to the model at inference time via the input prompt.
+
+Each component is usually placed in the
 ### ChromaDB
 
 **Chroma is the open-source embedding database**. Chroma makes it easy to build LLM apps by making knowledge, facts, and skills pluggable for LLMs.
@@ -70,3 +103,6 @@ collection = client.create_collection(
       metadata={"hnsw:space": "cosine"} # l2 is the default,  "l2", "ip, "or "cosine".
   )
 ```
+
+
+[def]: https://www.freecodecamp.org/news/content/images/2023/05/ByteSizedThumbnail--1200---800-px---10-.png
